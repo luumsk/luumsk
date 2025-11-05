@@ -1,16 +1,40 @@
-## Hi there 👋
+```python
+# -*- coding: utf-8 -*-
 
-<!--
-**luumsk/luumsk** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+class Researcher:
+    def __init__(self):
+        self.name = "Luu Minh Sao Khue"
+        self.role = "PhD Student & AI Researcher"
+        self.affiliation = (
+            "Department of Mathematics and Mechanics, "
+            "and Artificial Intelligence Research Center, "
+            "Novosibirsk State University"
+        )
+        self.focus = [
+            "Medical Image Analysis",
+            "Self-Supervised Learning",
+            "Multimodal Fusion",
+            "AI Agents"
+        ]
+        self.projects = {
+            "BrainFM": "Foundation model for multimodal brain MRI",
+            "SatMFM": "Foundation model for multimodal satellite data",
+            "ToolBrain": "Reinforcement learning framework for AI agents"
+        }
+        self.contact = {
+            "Website": "https://luumsk.github.io",
+            "LinkedIn": "https://linkedin.com/in/lmsk",
+            "ResearchGate": "https://www.researchgate.net/profile/Minh-Sao-Khue-Luu"
+        }
 
-Here are some ideas to get you started:
+    def __repr__(self):
+        return (
+            f"<{self.role} | Exploring {', '.join(self.focus[:3])}, "
+            f"and {self.focus[-1]}>"
+        )
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+if __name__ == "__main__":
+    me = Researcher()
+    print(me)
+```
