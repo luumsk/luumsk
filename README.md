@@ -1,40 +1,51 @@
-```python
-# -*- coding: utf-8 -*-
 
+from dataclasses import dataclass, field
+
+
+@dataclass
 class Researcher:
-    def __init__(self):
-        self.name = "Luu Minh Sao Khue"
-        self.role = "PhD Student & AI Researcher"
-        self.affiliation = (
-            "Department of Mathematics and Mechanics, "
-            "and Artificial Intelligence Research Center, "
-            "Novosibirsk State University"
-        )
-        self.focus = [
-            "Medical Image Analysis",
-            "Self-Supervised Learning",
-            "Multimodal Fusion",
-            "AI Agents"
-        ]
-        self.projects = {
-            "BrainFM": "Foundation model for multimodal brain MRI",
-            "SatMFM": "Foundation model for multimodal satellite data",
-            "ToolBrain": "Reinforcement learning framework for AI agents"
-        }
-        self.contact = {
-            "Website": "https://luumsk.github.io",
-            "LinkedIn": "https://linkedin.com/in/lmsk",
-            "ResearchGate": "https://www.researchgate.net/profile/Minh-Sao-Khue-Luu"
-        }
+    name: str = "Luu Minh Sao Khue"
+    role: str = "PhD Candidate | AI Researcher"
+    affiliation: str = (
+        "The Artificial Intelligence Research Center, "
+        "Novosibirsk State University"
+    )
 
-    def __repr__(self):
+    research_interests: list[str] = field(default_factory=lambda: [
+        "Multi-Agent Systems",
+        "LLM Reasoning and Optimization",
+        "AI Oversight and Reliability",
+        "Self-Improving AI Systems",
+        "Medical AI",
+    ])
+
+    research_projects: list[str] = field(default_factory=lambda: [
+        "Optimization of multi-agent communication",
+        "Budgeted oversight for reliable AI agents",
+        "Capability-aware reasoning in vision-language models",
+        "Representation learning for medical image analysis",
+    ])
+
+    publications: dict[str, str | int] = field(default_factory=lambda: {
+        "Total": 13,
+        "Q1 Journals": 2,
+        "Q2 Journals": 1,
+        "CORE A*/A Conferences": 2,
+    })
+
+    contact: dict[str, str] = field(default_factory=lambda: {
+        "Website": "https://luumsk.github.io",
+        "LinkedIn": "https://linkedin.com/in/lmsk",
+        "ResearchGate": "https://www.researchgate.net/profile/Minh-Sao-Khue-Luu",
+    })
+
+    def __str__(self) -> str:
         return (
-            f"<{self.role} | Exploring {', '.join(self.focus[:3])}, "
-            f"and {self.focus[-1]}>"
+            f"{self.name} | {self.role}\n"
+            "Building intelligent and reliable AI systems."
         )
 
 
 if __name__ == "__main__":
     me = Researcher()
     print(me)
-```
